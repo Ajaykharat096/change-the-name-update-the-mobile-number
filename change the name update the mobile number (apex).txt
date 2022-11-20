@@ -1,0 +1,23 @@
+trigger UpdatePhoneNumber on Account (before insert , before update) {
+    if(trigger.isInsert)
+    for(Account acc : trigger.new){
+        if(acc.name =='ajay'){
+            acc.phone ='1234567890';
+                system.debug('name is update');
+            
+            
+        }
+    }
+    
+    
+    
+    if(trigger.isUpdate){
+    for(Account acc : trigger.new){
+        if(acc.name == 'ajay'){
+            acc.phone ='1234567890';
+            system.debug('number is update');
+        }
+    }
+   }  
+
+}
